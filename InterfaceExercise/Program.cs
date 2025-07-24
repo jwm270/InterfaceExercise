@@ -69,9 +69,9 @@ namespace InterfaceExercise
             suvOne.Has3RdRow = true;
             suvOne.IsAllWheelDrive = true;
             
-            var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne };
+            var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne }; //How do I get this to call ICompany as well?
 
-            foreach (var ride in parkingLot)
+            foreach (var ride in parkingLot) //Ask about ride in recognition and relevance to new List<IVehicle>()...
             {
                 Console.WriteLine($"This is a {ride.Year}, {ride.Make}, {ride.Model}...from our {ride.Class} line of vehicles.\n");
             }
