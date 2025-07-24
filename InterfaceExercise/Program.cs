@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -38,12 +39,50 @@ namespace InterfaceExercise
             //Now, create objects of your 3 classes and give their members values.
             //Creatively display and organize their values
             
+            var carOne = new Car();
+            carOne.Year = 2025;
+            carOne.Make = "Chevy";
+            carOne.Model = "Corvette";
+            carOne.Class = "Sports Car";
+            carOne.Name = "Matilda";
+            carOne.Motto = "Chevy Tries...";
+            carOne.Type = "Speedster";
+            carOne.HasTrunk = true;
+            
+            var truckOne = new Truck();
+            truckOne.Year = 2012;
+            truckOne.Make = "Ford";
+            truckOne.Model = "F-350";
+            truckOne.Class = "Super-Duty";
+            truckOne.Name = "Lariat";
+            truckOne.Motto = "Ford Strong!";
+            truckOne.Is2WheelDrive = false;
+            truckOne.Is4WheelDrive = true;
+
+            var suvOne = new SUV();
+            suvOne.Year = 2010;
+            suvOne.Make = "Dodge";
+            suvOne.Model = "Flex";
+            suvOne.Class = "Leisure";
+            suvOne.Name = "Dingo";
+            suvOne.Motto = "Ram Tough!";
+            suvOne.Has3RdRow = true;
+            suvOne.IsAllWheelDrive = true;
+            
+            var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne };
+
+            foreach (var ride in parkingLot)
+            {
+                Console.WriteLine($"This is a {ride.Year}, {ride.Make}, {ride.Model}...from our {ride.Class} line of vehicles.\n");
+            }
+
+
             //Option for displaying values: 
             //Create a stubbed out method called DisplayDetails in your IVehicle interface.
             //Implement the stubbed out method in the derived classes.
             //In the scope of them method, use string interpolation to display property values.
             //In order to also interpolate values from ICompany, research how to extend interfaces.
-            
+
         }
     }
 }
