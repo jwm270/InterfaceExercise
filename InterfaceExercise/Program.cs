@@ -47,7 +47,7 @@ namespace InterfaceExercise
             carOne.Name = "Matilda";
             carOne.Motto = "Chevy Tries...";
             carOne.Type = "Speedster";
-            carOne.HasTrunk = true;
+            carOne.HasTrunk = false;
             
             var truckOne = new Truck();
             truckOne.Year = 2012;
@@ -71,11 +71,26 @@ namespace InterfaceExercise
             
             var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne }; //How do I get this to call ICompany as well?
 
-            foreach (var ride in parkingLot) //Ask about ride in recognition and relevance to new List<IVehicle>()...
+            foreach (var ride in parkingLot)
             {
                 Console.WriteLine($"This is a {ride.Year}, {ride.Make}, {ride.Model}...from our {ride.Class} line of vehicles.\n");
             }
+            
+            var lot2 = new List<ICompany>() { carOne, truckOne, suvOne };
 
+            suvOne.DisplayDetails();
+            suvOne.Logo();
+            Console.WriteLine();
+            
+            carOne.DisplayDetails();
+            carOne.Logo();
+            Console.WriteLine();
+            
+            truckOne.DisplayDetails();
+            truckOne.Logo();
+            Console.WriteLine();
+            
+            
 
             //Option for displaying values: 
             //Create a stubbed out method called DisplayDetails in your IVehicle interface.

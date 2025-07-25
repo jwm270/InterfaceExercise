@@ -1,3 +1,5 @@
+using System;
+
 namespace InterfaceExercise;
 
 public class Truck : ICompany, IVehicle
@@ -10,9 +12,23 @@ public class Truck : ICompany, IVehicle
      */
     public bool Is4WheelDrive { get; set; }
     public bool Is2WheelDrive { get; set; }
+    public void MethodB()
+    {
+        Console.WriteLine("Method B");
+    }
+
     public string Name { get; set; }
     public string Motto { get; set; }
-    
+    public void Logo()
+    {
+        Console.WriteLine("Truck Logo");
+    }
+
+    public void MethodA()
+    {
+        Console.WriteLine("Method A");
+    }
+
     public int Year { get; set; }
     
     public string Make { get; set; }
@@ -20,4 +36,11 @@ public class Truck : ICompany, IVehicle
     public string Model { get; set; }
     
     public string Class { get; set; }
-}
+    public void DisplayDetails()
+    {
+        string range = Is4WheelDrive ? "four wheel drive" : "two wheel drive";
+        
+        Console.WriteLine($"My Truck is a {Year} and has {range}!");
+    }
+
+  }
